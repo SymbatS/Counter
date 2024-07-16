@@ -19,11 +19,17 @@ final class ViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         countLabel.text = "0"
     }
+    
+    func getCurrentTime() -> String {
+        let originalFormat = DateFormatter()
+        originalFormat.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        return originalFormat.string(from: Date())
+    }
+    
     @IBAction func decrementDidTap(_ sender: Any) {
         if count == 0 {
             textView.text = "\(getCurrentTime()) попытка уменьшить значение счётчика ниже 0\n" + textView.text
@@ -42,12 +48,7 @@ final class ViewController: UIViewController {
     @IBAction func resetDidTap(_ sender: Any) {
         count = 0
         textView.text = "\(getCurrentTime()) значение сброшено\n" + textView.text
-
-    }
-    func getCurrentTime() -> String {
-        let originalFormat = DateFormatter()
-        originalFormat.dateFormat = "dd-MM-yyyy HH:mm:ss"
-        return originalFormat.string(from: Date())
+        
     }
     
 }
