@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     @IBOutlet weak var buttonReset: UIButton!
     @IBOutlet weak var buttonDecrement: UIButton!
     @IBOutlet weak var buttonIncrement: UIButton!
@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         countLabel.text = "0"
-        // Do any additional setup after loading the view.
     }
     @IBAction func decrementDidTap(_ sender: Any) {
         if count == 0 {
